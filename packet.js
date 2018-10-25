@@ -9,6 +9,7 @@ function Packet (original, broker) {
   this.qos = original.qos || 0
   this.retain = original.retain || false
   this.messageId = 0
+  this.custom = original.custom || {}
 }
 
 module.exports = Packet

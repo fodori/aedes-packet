@@ -25,7 +25,8 @@ test('Packet copies over most data', function (t) {
     payload: 'world',
     qos: 2,
     retain: true,
-    messageId: 24
+    messageId: 24,
+    custom: {}
   }
   var instance = new Packet(original)
   var expected = {
@@ -36,7 +37,8 @@ test('Packet copies over most data', function (t) {
     payload: 'world',
     qos: 2,
     retain: true,
-    messageId: 0 // this is different
+    messageId: 0, // this is different
+    custom: {}
   }
 
   t.deepEqual(instance, expected)
@@ -54,7 +56,8 @@ test('Packet fills in broker data', function (t) {
     payload: 'world',
     qos: 2,
     retain: true,
-    messageId: 24
+    messageId: 24,
+    custom: {}
   }
   var instance = new Packet(original, broker)
   var expected = {
@@ -65,7 +68,8 @@ test('Packet fills in broker data', function (t) {
     payload: 'world',
     qos: 2,
     retain: true,
-    messageId: 0 // this is different
+    messageId: 0, // this is different
+    custom: {}
   }
 
   t.deepEqual(instance, expected)
